@@ -7,23 +7,25 @@ import Contact from './Pages/Contact';
 import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
 
 function App() {
+  let count = 0;
+
+  const increment = () =>{
+    count +=1;
+  }
+
+  const decriment = () =>{
+    count -=1;
+  }
+
   return (
-    <Router>
-      <div>
-        <Routes>
+    <>
 
-          <Route exact path="/" element={<Home/>}>
-          </Route>
+    <span className='title'>My Counter</span>
+    <p className='subTitle'> The count is {count}</p>
+    <button className='button'>-</button>
+    <button className='button'>+</button>
 
-          <Route path='/About' element={<About/>}>
-          </Route>
-
-          <Route path='/Conatct' element={<Contact/>}>
-          </Route>
-
-        </Routes>
-      </div>
-    </Router>
+    </>
 
   );
 }
