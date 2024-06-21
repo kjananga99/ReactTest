@@ -1,17 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-function buttonClick(){
-  console.log("Button is clicked");
-  alert("Button is clicked")
-}
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import Profile from './Profile';
+import Home from './Home';
+import About from './About';
+
 
 function App() {
 
   return (
     <div>
-      <h1>React Event Handling</h1>
-      <br></br> <hr></hr>
-      <button onClick = {buttonClick}> Click Here</button>
+      <h5>waiting for the navigation bar</h5>
+      <br></br><hr></hr>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>} ></Route>
+          <Route path='/profile' element={<Profile/>} ></Route>
+          <Route path='/about' element={<About/>} ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
